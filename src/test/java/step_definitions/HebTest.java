@@ -36,7 +36,7 @@ public class HebTest {
 		homePage.couponsIcon.click();
 		homePage.digitalCoupon.click();
 		homePage.scrollDown();
-		BrowserUtils.waitFor(15);
+		BrowserUtils.waitFor(5);
 	}
 
 	@When("^I should click on all Select buttons$")
