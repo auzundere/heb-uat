@@ -22,6 +22,7 @@ public class Hooks {
 		//driver.manage().window().fullscreen();
 		driver.switchTo().window(driver.getWindowHandle());
 		System.out.println("Before the Scenario started");
+		System.out.println(System.getProperty("os.name"));
 	}
 
 	@After
