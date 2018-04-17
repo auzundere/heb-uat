@@ -1,7 +1,5 @@
 package step_definitions;
 
-import org.openqa.selenium.WebElement;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import pages.HomePage;
@@ -43,7 +41,7 @@ public class HebTest {
 	public void i_should_click_on_all_Select_buttons() throws Throwable {
 		int numberOfCoupons=0;
 		int totalCoupons = homePage.availableCoupons.size();
-		
+		if(totalCoupons==0) System.exit(0);
 		for (int i=0; i<totalCoupons;i++) {
 			homePage.availableCoupons.get(i).click();
 				//Thread.sleep(200);
