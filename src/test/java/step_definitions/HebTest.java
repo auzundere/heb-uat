@@ -1,10 +1,13 @@
 package step_definitions;
 
+import org.openqa.selenium.WebElement;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import pages.HomePage;
 import utilities.BrowserUtils;
 import utilities.ConfigurationReader;
+import utilities.Driver;
 
 public class HebTest {
 
@@ -32,18 +35,24 @@ public class HebTest {
 	@When("^I should click on Digital Coupons$")
 	public void i_should_click_on_Digital_Coupons() throws Throwable {
 		homePage.couponsIcon.click();
-		homePage.digitalCoupon.click();
+		//homePage.digitalCoupon.click();
+		BrowserUtils.waitFor(1);
 		homePage.scrollDown();
-		BrowserUtils.waitFor(5);
+		//BrowserUtils.waitFor(10);
 	}
 
 	@When("^I should click on all Select buttons$")
 	public void i_should_click_on_all_Select_buttons() throws Throwable {
+		homePage.scrollDown();
+		BrowserUtils.waitFor(10);
 		int numberOfCoupons=0;
 		int totalCoupons = homePage.availableCoupons.size();
-		if(totalCoupons==0) System.exit(0);
+		if(totalCoupons==0) {
+			Driver.closeDriver();
+			System.exit(0);
+		}
 		for (int i=0; i<totalCoupons;i++) {
-			homePage.availableCoupons.get(i).click();
+			homePage.clickElement(homePage.availableCoupons.get(i));
 				//Thread.sleep(200);
 				numberOfCoupons++;
 			}

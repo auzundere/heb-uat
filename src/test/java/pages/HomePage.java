@@ -53,6 +53,12 @@ public class HomePage {
 	@FindBy(css = ".close-window")
 	public WebElement closePopUp;
 	
+	
+	
+	public void clickElement(WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+	}
+	
 	public void scrollDown() {
 		((JavascriptExecutor)
 				driver).executeScript("window.scrollTo(0,document.body.scrollHeight)");
