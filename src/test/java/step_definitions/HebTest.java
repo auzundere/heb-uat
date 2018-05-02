@@ -47,10 +47,10 @@ public class HebTest {
 		BrowserUtils.waitFor(10);
 		int numberOfCoupons=0;
 		int totalCoupons = homePage.availableCoupons.size();
-		if(totalCoupons==0) {
-			Driver.closeDriver();
-			System.exit(0);
-		}
+//		if(totalCoupons==0) {
+//			Driver.closeDriver();
+//			System.exit(0);
+//		}
 		for (int i=0; i<totalCoupons;i++) {
 			homePage.clickElement(homePage.availableCoupons.get(i));
 				//Thread.sleep(200);
