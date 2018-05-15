@@ -35,7 +35,7 @@ public class HomePage {
 	@FindBy(css="#login-submit")
 	public WebElement loginButton;
 	
-	@FindBy(css = "#body > ul > li:nth-child(2) > a > span.option-title")
+	@FindBy(xpath = "//span[.='Coupons']")
 	public WebElement couponsIcon;
 	
 	@FindBy(linkText = "Select Digital Coupons")
@@ -52,8 +52,6 @@ public class HomePage {
 	
 	@FindBy(css = ".close-window")
 	public WebElement closePopUp;
-	
-	
 	
 	public void clickElement(WebElement element) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
